@@ -1,15 +1,11 @@
 import { Injectable } from "@nestjs/common";
-import { GetCharacterQueryDto } from "./create-character.tdo";
+import { GetCharacterQueryDto } from "../data-transfer-objects";
 import { Character } from "src/interfaces";
-import { CHARACTERS } from "./data";
+import { CHARACTERS } from "../data";
 
 @Injectable()
 export class CharactersService {
 	private readonly characters: Character[] = CHARACTERS;
-
-	findOne(id: string): Character | undefined {
-		return this.characters.find(character => character.id === id);
-	}
 
 	findBy(queryParams: GetCharacterQueryDto): Character[] {
 		return this.characters.filter(character => {

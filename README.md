@@ -1,3 +1,1 @@
-## TODO
-
-- Rate limiter
+## Run tests
