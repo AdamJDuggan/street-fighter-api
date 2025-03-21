@@ -1,10 +1,24 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { ValidationPipe } from "@nestjs/common";
+import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
+	/**
+	 * Generate OpenAPI documentation for endpoints
+	 */
+	const config = new DocumentBuilder()
+		.setTitle("Street Fighter API")
+		.setDescription("Endpoints")
+		.setVersion("1.0")
+		.build();
+	const documentFactory = () => SwaggerModule.createDocument(app, config);
+	SwaggerModule.setup("api", app, documentFactory);
 
+	/**
+	 * Ensure req params match DTOs
+	 */
 	app.useGlobalPipes(
 		new ValidationPipe({
 			whitelist: true, // Remove unknown properties

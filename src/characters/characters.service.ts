@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { GetCharacterQueryDto } from "./create-character.tdo";
-import { Character } from "src/types";
+import { Character } from "src/interfaces";
 import { CHARACTERS } from "./data";
 
 @Injectable()
@@ -20,7 +20,6 @@ export class CharactersService {
 	}
 
 	findAll(): Character[] {
-		console.log("HIT");
 		return this.characters;
 	}
 }

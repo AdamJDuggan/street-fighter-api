@@ -1,4 +1,4 @@
-import { Character } from "src/types";
+import { Character } from "src/interfaces";
 
 export const CHARACTERS: Character[] = [
 	{ id: "adon", name: "Adon", country: "THA" },
