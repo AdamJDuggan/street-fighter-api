@@ -1,21 +1,8 @@
 import { Controller, Param, Get, NotFoundException } from "@nestjs/common";
-import {
-	ApiOperation,
-	ApiParam,
-	ApiResponse,
-	ApiProperty,
-} from "@nestjs/swagger";
+import { ApiOperation, ApiParam, ApiResponse } from "@nestjs/swagger";
 import { CharacterService } from "./character.service";
 import { Character } from "src/interfaces";
-
-class CharacterDto implements Character {
-	@ApiProperty({ example: "ryu" })
-	id: string;
-	@ApiProperty({ example: "Ryu" })
-	name: string;
-	@ApiProperty({ example: "JPN" })
-	country: string;
-}
+import { CharacterDto } from "../data-transfer-objects";
 
 @Controller("character")
 export class CharacterController {
