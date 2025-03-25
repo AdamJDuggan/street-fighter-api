@@ -9,7 +9,7 @@ export class AppController {
 	@Get()
 	getHello(@Res() res: Response) {
 		return res.render("index", {
-			title: "Page title",
+			title: "SFA2 Api",
 			message: "Hello World",
 		});
 	}

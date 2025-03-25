@@ -20,3 +20,5 @@ export const CHARACTERS: Character[] = [
 	{ id: "sodom", name: "Sodom", country: "USA" },
 	{ id: "zangief", name: "Zangief", country: "RUS" },
 ];
+
+export const CHARACTERS2 = JSON.stringify(CHARACTERS, null, 2);

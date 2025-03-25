@@ -1,0 +1,13 @@
+[
+	{
+		"id": "adon",
+		"name": "Adon",
+		"country": "THA"
+	},
+	{
+		"id": "akuma",
+		"name": "Akuma",
+		"country": "JPN"
+	}
+	// ... rest of characters ...
+]
